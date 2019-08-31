@@ -1,0 +1,19 @@
+Umapi 最底层接口，得到相应的数据。大多DataFrame数据类型
+
+Hnbi 构建相应表格数据并写入MySQL  
+		Hnbi无版本有渠道
+		Hnbi1有版本有渠道
+		
+getbasicinformation 得到应用的基本信息，app名字和对应的appkey并以字典形式返回（现在只有两种手机惠农安卓与手机惠农ios）。各种app对应的渠道和版本分别以列表形式返回（每个appkey对应一定的版本和渠道）。
+
+write_to_MySQL_result 检查上一个日期写入数据是否成功，然后判断是否需要补充数据，构建表并写入MySQL函数，得到日志。
+
+
+************只有渠道没有版本时 得到表格数据大概需要的时间
+getumeng_basic表  Android 现有124个渠道  （124*3+1*3）/30=12.5分钟
+getumeng_basic_acc （3+15（app用户停留时间只能一天一天获取）+15（每次启动停留时间）+3留存）*2/30=2.4
+getumeng_retention  (145+1)*2/30=9.7
+***********有渠道和版本时，，得到表格大概时间
+getumeng_basic表  Android 现有124个渠道  （124*53+1*114）*3/30=668.6分钟
+getumeng_basic_acc （3+15（app用户停留时间只能一天一天获取）+15（每次启动停留时间）+3留存）*2/30=2.4
+getumeng_retention  (145*53+1*114)*2/30=519.9分钟
