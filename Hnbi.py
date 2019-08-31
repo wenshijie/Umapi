@@ -17,7 +17,7 @@ class HNBI():
 	#app名字和appkey 现在获取不到如下dict_app
 	dict_app=getbasicinformation.getappkeyANDappname()
 	def __init__(self, dict_app=dict_app,
-		engine=create_engine('mysql+pymysql://wensj:wensj123@10.10.11.223:3306/emp?charset=utf8', echo=False)):
+		engine=create_engine('mysql+pymysql://*************************/emp?charset=utf8', echo=False)):
 		self.dict_app = dict_app
 		self.engine=engine
 ######################################表umeng_basic的清洗和写入自动删除重复数据（重新写入时）。更新时自动删除老数据。############

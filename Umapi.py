@@ -49,7 +49,7 @@ class API():#url 对应的固定参数组成
 		'''apikey,apiSecurity为网站提供值'''
 
 
-	def UmengUappGetNewAccountsRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-08-12',
+	def UmengUappGetNewAccountsRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-08-12',
 				'endDate':'2018-08-14','periodType':'daily','channel':None}):
 		'''获得新增账户,返回DataFrame数据类型,列明为对应的json字典key名。
 		返回一个日期数行3列或4列（如果有channel）的DataFrame数据，返回'date'日期, 'newAccount', 'newUser',（channel）
@@ -71,7 +71,7 @@ class API():#url 对应的固定参数组成
 		else:
 			data['channel']=opi_parameter['channel']
 		return data
-	def UmengUappGetActiveAccountsRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-08-12',
+	def UmengUappGetActiveAccountsRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-08-12',
 				'endDate':'2018-08-14','periodType':'daily','channel':None}):
 		'''获取活跃账号，返回一个日期数行3列或4列（如果有channel）的DataFrame数据
 		返回'date', 'activeAccount', 'activeUser',（channel）
@@ -102,7 +102,7 @@ class API():#url 对应的固定参数组成
 		pass
 
 
-	def UmengUappGetLaunchesByChannelOrVersionRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-01-01',
+	def UmengUappGetLaunchesByChannelOrVersionRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-01-01',
 				'endDate':'2018-01-02','periodType':'daily','channels':None,'versions':None}):
 		'''根据渠道或版本条件，获取App启动次数.注意这里channels比前面的多了个s
 		返回日期行两列或者四列的DataFrame数据,'date'日期, 'value',('channels', 'versions')
@@ -130,7 +130,7 @@ class API():#url 对应的固定参数组成
 		return data
 
 
-	def UmengUappGetActiveUsersByChannelOrVersionRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-01-01',
+	def UmengUappGetActiveUsersByChannelOrVersionRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-01-01',
 				'endDate':'2018-01-02','periodType':'daily','channels':None,'versions':None}):
 		'''根据渠道或版本条件，获取App活跃用户数
 		返回日期行两列或者四列的DataFrame数据,'date'日期, 'value',('channels', 'versions')
@@ -159,7 +159,7 @@ class API():#url 对应的固定参数组成
 		
 
 
-	def UmengUappGetNewUsersByChannelOrVersionRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-01-01',
+	def UmengUappGetNewUsersByChannelOrVersionRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-01-01',
 				'endDate':'2018-01-02','periodType':'daily','channels':None,'versions':None}):
 		'''根据渠道或版本条件，获取App新增用户数
 		返回日期行两列或者四列的DataFrame数据,'date'日期, 'value',('channels', 'versions')
@@ -187,7 +187,7 @@ class API():#url 对应的固定参数组成
 		return data
 
 		#没数据
-	def UmengUappEventParamGetValueDurationListRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-01-01',
+	def UmengUappEventParamGetValueDurationListRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-01-01',
 				'endDate':'2018-01-02','eventName':None,'eventParamName':None}):
 		'''获取事件参数值时长列表'''
 		signature_opi_parameter,url_opi_parameter=dict_url_signature(opi_parameter)
@@ -202,7 +202,7 @@ class API():#url 对应的固定参数组成
 		return data
 		
 
-	def UmengUappGetTodayYesterdayDataRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933'}):
+	def UmengUappGetTodayYesterdayDataRequest(self,opi_parameter={'appkey':'************************'}):
 		'''获取App今天与昨天的统计数据,返回1行5列的DataFrame数据。
 		'activityUsers', 'date'日期, 'launches', 'newUsers', 'totalUsers' 
 		名称	类型	是否必须	描述	示例值
@@ -215,7 +215,7 @@ class API():#url 对应的固定参数组成
 		data=pd.DataFrame([message['todayData'],message['yesterdayData']])
 		return data 
 
-	def UmengUappGetYesterdayDataRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933'}):
+	def UmengUappGetYesterdayDataRequest(self,opi_parameter={'appkey':'************************'}):
 		'''获取App昨天统计数据返回1行5列的DataFrame数据。
 		'activityUsers', 'date'日期, 'launches', 'newUsers', 'totalUsers' 
 		名称	类型	是否必须	描述	示例值
@@ -228,7 +228,7 @@ class API():#url 对应的固定参数组成
 		data=pd.DataFrame([message['yesterdayData']])
 		return data 
 		
-	def UmengUappGetTodayDataRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933'}):
+	def UmengUappGetTodayDataRequest(self,opi_parameter={'appkey':'************************'}):
 		'''获取App今天统计数据返回1行5列的DataFrame数据。
 		'activityUsers', 'date'日期, 'launches', 'newUsers', 'totalUsers' 
 		名称	类型	是否必须	描述	示例值
@@ -241,7 +241,7 @@ class API():#url 对应的固定参数组成
 		data=pd.DataFrame([message['todayData']])
 		return data 
 		#没数据
-	def UmengUappEventGetUniqueUsersRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-08-12',
+	def UmengUappEventGetUniqueUsersRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-08-12',
 				'endDate':'2018-08-14','eventName':None}):
 		'''获取自定义事件的独立用户数
 			名称		类型		是否必须		描述		示例值		
@@ -279,7 +279,7 @@ class API():#url 对应的固定参数组成
 		data=pd.DataFrame([message])
 		return data 
 
-	def UmengUappGetChannelDataRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933', 
+	def UmengUappGetChannelDataRequest(self,opi_parameter={'appkey':'************************', 
 			'date':'2018-08-14', 'perPage':None, 'page':None}):
 		'''获取渠道维度统计数据,所有渠道和
 			名称		类型		是否必须		描述		示例值		
@@ -297,7 +297,7 @@ class API():#url 对应的固定参数组成
 		data=pd.DataFrame(message['channelInfos'])
 		return totalPage,page,data
 
-	def UmengUappGetVersionDataRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933', 'date':'2018-08-14'}):
+	def UmengUappGetVersionDataRequest(self,opi_parameter={'appkey':'************************', 'date':'2018-08-14'}):
 		'''获取版本维度统计数据。返回当前版本数行6列的DataFrame数据
 		返回'activeUser', 'date', 'newUser', 'totalUser', 'totalUserRate','version'
 		参数：名称		类型		是否必须		描述		示例值		
@@ -311,7 +311,7 @@ class API():#url 对应的固定参数组成
 		data=pd.DataFrame(message['versionInfos'])
 		return data
 		#无数据
-	def UmengUappEventParamGetDataRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-01-01',
+	def UmengUappEventParamGetDataRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-01-01',
 				'endDate':'2018-01-02','eventName':None,'eventParamName':None,'paramValueName':None}):
 		'''获取事件参数值统计数据，所有参数不为空
 
@@ -330,7 +330,7 @@ class API():#url 对应的固定参数组成
 		#data=pd.DataFrame(message['versionInfos'])
 		#return data
 		#无数据
-	def UmengUappEventParamGetValueListRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-01-01',
+	def UmengUappEventParamGetValueListRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-01-01',
 				'endDate':'2018-01-02','eventName':None,'eventParamName':None}):
 		'''获取事件参数值统计列表，所有参数不为空
 
@@ -348,7 +348,7 @@ class API():#url 对应的固定参数组成
 		#data=pd.DataFrame(message['versionInfos'])
 		#return data
 		#无数据
-	def UmengUappEventGetDataRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-01-01',
+	def UmengUappEventGetDataRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-01-01',
 				'endDate':'2018-01-02','eventName':None}):
 		'''获取事件统计数据，所有参数不为空
 
@@ -365,7 +365,7 @@ class API():#url 对应的固定参数组成
 		#data=pd.DataFrame(message['versionInfos'])
 		#return data
 		#无数据
-	def UmengUappEventParamListRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-01-01',
+	def UmengUappEventParamListRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-01-01',
 				'endDate':'2018-01-02','eventId':None}):
 		'''获取事件参数列表，所有参数不为空
 
@@ -382,7 +382,7 @@ class API():#url 对应的固定参数组成
 		#data=pd.DataFrame(message['versionInfos'])
 		#return data
 
-	def UmengUappEventListRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933', 'startDate':'2018-08-12',
+	def UmengUappEventListRequest(self,opi_parameter={'appkey':'************************', 'startDate':'2018-08-12',
 			'endDate':'2018-08-14', 'perPage':'60', 'page':'1','version':None}):
 		'''获取事件列表(事件的对应信息),经过测试知道page，perPage小于100,返回n（perPage*page）行,4列列的DataFrame数据
 		'count', 'displayName', 'id', 'name' 
@@ -401,7 +401,7 @@ class API():#url 对应的固定参数组成
 		data=pd.DataFrame(message['eventInfo'])
 		return data
 
-	def UmengUappGetRetentionsRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-01-01',
+	def UmengUappGetRetentionsRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-01-01',
 				'endDate':'2018-01-02','periodType':'daily','channel':None,'version':None}):
 		'''获取App留存用户数 返回日期行11列的DataFrame数据
 		行标签为日起 安装用户数 1-7天留存 14天留存 30天留存
@@ -446,7 +446,7 @@ class API():#url 对应的固定参数组成
 			data['versions']=opi_parameter['version']
 		return data
 
-	def UmengUappGetDurationsRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933', 'date':'2018-08-14',
+	def UmengUappGetDurationsRequest(self,opi_parameter={'appkey':'************************', 'date':'2018-08-14',
 			'statType':'daily','channel':None,'version':None}):
 		'''获取App使用时长
 		返回8行3列DataFrame数据 列标签 停留时长区间 比率 人数 		行标签为对应区间
@@ -474,7 +474,7 @@ class API():#url 对应的固定参数组成
 		return data
 		
 
-	def UmengUappGetLaunchesRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-01-01',
+	def UmengUappGetLaunchesRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-01-01',
 				'endDate':'2018-01-02','periodType':'daily'}):
 		'''获取App启动次数 返回日期行 两列数据 列标签；为日期和当天启动数 （测试结果和所给示例不一样 没有按小时的）
 		参数：名称	类型	是否必须	描述	示例值
@@ -489,7 +489,7 @@ class API():#url 对应的固定参数组成
 		message=requests.get(url).json()#请求url返回一个json字典文档文档
 		data=pd.DataFrame(message['launchInfo'])
 		return data
-	def UmengUappGetActiveUsersRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-08-12',
+	def UmengUappGetActiveUsersRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-08-12',
 				'endDate':'2018-08-14','periodType':'daily'}):
 		'''获取App活跃用户数 返回日期行 两列数据 列标签：为日期和APP当天活跃数 （测试结果和所给示例不一样 没有按小时的）
 		参数：名称	类型	是否必须	描述	示例值
@@ -504,7 +504,7 @@ class API():#url 对应的固定参数组成
 		message=requests.get(url).json()#请求url返回一个json字典文档文档
 		data=pd.DataFrame(message['activeUserInfo'])
 		return data
-	def UmengUappGetNewUsersRequest(self,opi_parameter={'appkey':'52254b8a56240be8db048933','startDate':'2018-01-01',
+	def UmengUappGetNewUsersRequest(self,opi_parameter={'appkey':'************************','startDate':'2018-01-01',
 				'endDate':'2018-01-02','periodType':'daily'}):
 		'''获取App新增用户数 返回日期行 两列数据 列标签：为日期和当天app新增用户数 （测试结果和所给示例不一样 没有按小时的）
 		参数：名称	类型	是否必须	描述	示例值
@@ -521,7 +521,7 @@ class API():#url 对应的固定参数组成
 		return data
 		#没有测试接口
 	def UmengUappGetDailyDataRequest(self,opi_parameter={'channel':None,'versions':None,
-				'appkey':'52254b8a56240be8db048933','date':'2018-08-14'}):
+				'appkey':'************************','date':'2018-08-14'}):
 		'''获取App统计数据
 		参数：名称	类型	是否必须	描述	示例值
 			appkey	String	是	应用ID	--
