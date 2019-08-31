@@ -40,7 +40,7 @@ def dict_url_signature(opi_parameter={}):
 
 
 class API():#url 对应的固定参数组成
-	def __init__(self,mainurl='https://gateway.open.umeng.com/openapi/',apikey='2890235',apiSecurity='Zvdm11P19u',
+	def __init__(self,mainurl='https://gateway.open.umeng.com/openapi/',apikey='1111111',apiSecurity='AAAAAAAAAA',
 				path='param2/1/com.umeng.uapp/'):
 		self.mainurl=mainurl
 		self.apikey=apikey
